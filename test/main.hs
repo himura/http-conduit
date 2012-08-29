@@ -13,6 +13,7 @@ import Control.Concurrent (forkIO, killThread, threadDelay)
 import Network.HTTP.Types
 import Control.Exception.Lifted (try, SomeException)
 import Network.HTTP.Conduit.ConnInfo
+import ParserTest (parserTest)
 import CookieTest (cookieTest)
 import Data.Conduit.Network (runTCPServer, ServerSettings (..), HostPreference (HostAny))
 import Data.Conduit (($$))
@@ -38,6 +39,7 @@ app req =
 
 main :: IO ()
 main = hspecX $ do
+    parserTest
     cookieTest
     describe "simpleHttp" $ do
         it "gets homepage" $ do

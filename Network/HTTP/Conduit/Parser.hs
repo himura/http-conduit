@@ -5,6 +5,7 @@ module Network.HTTP.Conduit.Parser
     , newline
     , parserHeadersFromByteString
     , parseChunkHeader
+    , parseStatus
     ) where
 
 import Prelude hiding (take, takeWhile)
